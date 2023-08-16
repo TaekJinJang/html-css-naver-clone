@@ -71,7 +71,8 @@
         box-sizing: border-box;
       }
       body,
-      html {
+      html,
+      form {
         margin: 0 auto;
         padding: 0;
       }
@@ -81,11 +82,11 @@
       #wrap-center {
         width: 1280px;
         display: inline-block;
-        background-color: yellow;
       }
       #header {
         text-align: left;
         position: relative;
+        height: 64px;
       }
       #header-hamburger,
       #header-navertalk,
@@ -174,7 +175,139 @@
             <span class="blind">알림</span>
           </button>
         </div>
-        <div id="search"></div>
+        <style>
+          #search > form {
+            display: inline-flex;
+            width: 708px;
+            height: 60px;
+            border: 1px solid #03c75a;
+            border-radius: 33px;
+            text-align: left;
+          }
+          #search > form:hover {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+          }
+          #search-svg {
+            display: inline-flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            width: 68px;
+            margin-right: 12px;
+            height: 100%;
+            padding-left: 10px;
+          }
+
+          #search > form:focus-within #search-svg::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 1px;
+            height: 20px;
+            background-color: #e4e4e4;
+          }
+          #search-svg svg {
+            fill: #03c75a;
+            width: 24px;
+            height: 24px;
+          }
+          #search-input {
+            width: 480px;
+            padding: 17px 0;
+            font-size: 2rem;
+            line-height: 24px;
+            font-weight: bold;
+            border: none;
+            outline: none;
+          }
+          #search-input::placeholder {
+            color: white;
+          }
+          #search-input:focus::placeholder {
+            color: #e4e4e4;
+          }
+          #search-right {
+            display: flex;
+            flex: 1;
+            align-items: stretch;
+            justify-content: flex-end;
+          }
+          #search-keyboard,
+          #search-recent,
+          #search-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+          }
+
+          #search-keyboard::before {
+            content: '';
+            display: block;
+            background-image: url(./asset/sp_main.png);
+            background-size: 434px 422px;
+            background-position: -50px -270px;
+            background-repeat: no-repeat;
+            width: 24px;
+            height: 16px;
+          }
+          #search-keyboard:hover::before {
+            filter: brightness(0.7);
+          }
+          #search-recent::before {
+            content: '';
+            display: block;
+            background-image: url(./asset/sp_main.png);
+            background-size: 434px 422px;
+            background-position: -323px -174px;
+            background-repeat: no-repeat;
+            width: 10px;
+            height: 6px;
+          }
+
+          #search-button::before {
+            content: '';
+            display: block;
+            background-image: url(./asset/sp_main.png);
+            background-size: 434px 422px;
+            background-position: -364px -213px;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
+          }
+        </style>
+        <div id="search">
+          <form action="">
+            <a id="search-svg">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"
+                ></path>
+              </svg>
+            </a>
+
+            <label for="search-input" class="blind">검색어 입력</label>
+            <input
+              id="search-input"
+              type="text"
+              placeholder="검색어를 입력하세요."
+            />
+            <div id="search-right">
+              <button id="search-keyboard">
+                <span class="blind">입력도구</span>
+              </button>
+              <button id="search-recent">
+                <span class="blind">자동완성/최근검색어 펼치기</span>
+              </button>
+              <button id="search-button">
+                <span class="blind">검색</span>
+              </button>
+            </div>
+          </form>
+        </div>
         <div id="nav"></div>
         <div id="main"></div>
       </div>
