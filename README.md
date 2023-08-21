@@ -6,4 +6,4 @@
  ~~캡처가 자꾸 짤리네요..~~
 
  > 다시 되집어보며 블로그에 쓴 글입니다.
- 링크~
+<br>https://velog.io/@taek_jini/CSS-%ED%97%B7%EA%B0%88%EB%A6%AC%EB%8A%94-%EB%AC%B8%EB%B2%95-%EC%A0%95%EB%A6%AC
